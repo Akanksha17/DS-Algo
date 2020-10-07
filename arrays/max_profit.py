@@ -6,12 +6,13 @@
 
 
 class Solution:
-    def max_profit(self, prices):
+    @staticmethod
+    def max_profit(prices):
         prices_len = len(prices)
         if prices_len == 0:
             return 0
         profit = 0
         for i in range(1, prices_len):
             if prices[i] > prices[i-1]:
-                profit += (prices[i-1] - prices[i])
+                profit += (prices[i] - prices[i-1])
         return profit
