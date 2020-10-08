@@ -8,7 +8,7 @@ class Solution:
         result = []
         i, j = 0, 0
 
-        while i < len(nums1) or j < len(nums2):
+        while i < len(nums1) and j < len(nums2):
             if nums1[i] == nums2[j]:
                 result.append(nums1[i])
                 i += 1
