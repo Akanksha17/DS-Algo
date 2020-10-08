@@ -2,19 +2,22 @@
 
 class Solution:
     @staticmethod
-    def find_intersection_of_array(self, nums1, nums2):
-        nums1_len = len(nums1)
-        nums2_len = len(nums2)
-        intersection_dict = {}
+    def find_intersection_of_array(nums1, nums2):
+        nums1.sort()
+        nums2.sort()
+        result = []
         i, j = 0, 0
-        intersection_arr = []
 
-        while i < nums1_len or j < nums2_len:
-            if nums1[i] != nums2[j]:
-                i += 1
+        while i < len(nums1) or j < len(nums2):
             if nums1[i] == nums2[j]:
-                if (j == 0) or (j - 1 in intersection_dict.keys()):
-                    intersection_arr.append(nums1[i])
+                result.append(nums1[i])
+                i += 1
+                j += 1
+            elif nums1[i] < nums2[j]:
+                i += 1
+            else:
+                j += 1
+        return result
 
 
 
