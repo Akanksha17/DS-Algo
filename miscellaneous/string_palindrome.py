@@ -10,6 +10,3 @@ def isStingPalindrom(text_string):
         end -= 1
 
     return True
-
-a = isStingPalindrom('ANNA')
-print(a)
